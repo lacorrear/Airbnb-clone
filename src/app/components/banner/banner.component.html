@@ -1,0 +1,26 @@
+<app-date-picker *ngIf="datePicker"></app-date-picker>
+
+<div class="banner">
+  <div class="banner__search">
+    <button
+      (click)="datePicker = !datePicker"
+      class="banner__searButton"
+      mat-button
+      type="button"
+    >
+      <span *ngIf="!datePicker">Search Dates</span>
+      <span *ngIf="datePicker">Hide</span>
+    </button>
+  </div>
+  <div class="banner__info">
+    <div class="banner__info__text">
+      <h4>Get out and stretch your imagination</h4>
+      <h6>
+        Plan a different kind of getaway to uncover the hidden gems near you
+      </h6>
+      <button routerLink="/search" mat-flat-button color="airbnb">
+        Explore Nearby
+      </button>
+    </div>
+  </div>
+</div>

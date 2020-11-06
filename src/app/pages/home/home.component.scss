@@ -1,0 +1,11 @@
+.home {
+  &__section {
+    // background-color: lawngreen;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch !important;
+
+    padding-left: auto;
+    padding-right: auto;
+  }
+}

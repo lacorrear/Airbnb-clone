@@ -1,0 +1,163 @@
+// in component.scss
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+.picker {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  igx-dialog {
+    z-index: 1000;
+  }
+  &__footer {
+    // border: solid 1px red;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+
+    // Check Avaliability button
+    button {
+      margin-right: 2%;
+      margin-left: 2%;
+      border: solid 0.5px black;
+
+      &:hover {
+        background-color: white !important;
+        color: black;
+        box-shadow: none !important;
+      }
+    }
+
+    &__nog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      margin-left: 2%;
+
+      &__text {
+        // background-color: lightsalmon;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: inherit;
+        width: 120px;
+        margin-right: 1%;
+        p {
+          // background-color: magenta;
+          font-size: 16px !important;
+          line-height: 20px !important;
+          font-weight: 600 !important;
+          margin-bottom: -2px;
+        }
+        span {
+          // background-color: maroon;
+          font-size: 14px !important;
+          line-height: 18px !important;
+          font-weight: 400 !important;
+          color: rgb(113, 113, 113) !important;
+          margin-bottom: 30px;
+        }
+      }
+      &__number {
+        // background-color: lime;
+        -webkit-box-pack: justify !important;
+        -webkit-box-align: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 104px !important;
+        height: 32px !important;
+        padding: 0 !important;
+        button {
+          background-color: white;
+          box-shadow: none !important;
+
+          -webkit-box-pack: center !important;
+          -webkit-box-align: center !important;
+          -webkit-box-flex: 0 !important;
+          width: 32px !important;
+          height: 32px !important;
+          display: inline-flex !important;
+          margin: 0px !important;
+          padding: 0px !important;
+          text-align: center !important;
+          border: solid 1px rgb(176, 176, 176);
+          color: rgb(113, 113, 113) !important;
+          outline: none !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+
+        .numebeOG {
+          color: rgb(34, 34, 34) !important;
+          font-weight: 400 !important;
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+// -------- Disable remove guests Button --------
+.mat-mini-fab[disabled] {
+  span {
+    color: rgb(235, 235, 235) !important;
+  }
+  border: solid 1px rgb(235, 235, 235) !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+// -------- CALENDAR style --------
+
+// common
+$purple: black;
+$blue: #61aedb;
+
+$custom-palette: igx-palette(
+  $primary: $blue,
+  $secondary: $purple,
+);
+
+$today-text: igx-color($custom-palette, "primary", 500);
+$text-color: igx-color($custom-palette, "secondary", 200);
+$color-focused: igx-color($custom-palette, "secondary", 500);
+
+// DATE-RANGE
+$custom-date-range-theme: igx-date-range-picker-theme(
+  $label-color: $color-focused,
+);
+
+// INPUT GROUP
+$custom-input-group-theme: igx-input-group-theme(
+  $palette: $custom-palette,
+  $filled-text-color: $text-color,
+  $idle-text-color: $text-color,
+  $focused-text-color: $color-focused,
+  $hover-bottom-line-color: $color-focused,
+  $idle-bottom-line-color: $purple,
+);
+
+// CALENDAR styling specific overlay component requires outlet -> [overlaySettings]="{ outlet: element }"
+$custom-calendar-theme: igx-calendar-theme(
+  $palette: $custom-palette,
+  $date-current-bg-color: #f0f0f0,
+  $date-current-text-color: $today-text,
+  $border-radius: 0.5,
+  $date-border-radius: 1,
+);
+
+// SEE https://www.infragistics.com/angularsite/components/calendar.html#styling for further info
+:host {
+  display: block;
+  padding: 1rem;
+
+  ::ng-deep {
+    @include igx-date-range-picker($custom-date-range-theme);
+    @include igx-input-group($custom-input-group-theme);
+    @include igx-calendar($custom-calendar-theme);
+  }
+}

@@ -1,0 +1,27 @@
+<div class="searchResult">
+  <img [src]="srcImage" alt="Place Image" />
+  <span id="favoriteIcon" class="material-icons"> favorite_border </span>
+
+  <div class="searchResult__rightBox">
+    <div class="searchResult__rightBox__top">
+      <p>{{ location }}</p>
+      <h5>{{ title }}</h5>
+      <br />
+      <hr style="width: 15%" />
+      <p>{{ description }}</p>
+    </div>
+
+    <div class="searchResult__rightBox__bottom">
+      <div class="searchResult__rightBox__bottom__stars">
+        <span id="startIcon" class="material-icons"> star </span>
+        <p>
+          <strong>{{ star }} </strong>
+        </p>
+      </div>
+      <div class="searchResult__rightBox__bottom__price">
+        <h4>{{ price }}</h4>
+        <p>{{ total }}</p>
+      </div>
+    </div>
+  </div>
+</div>

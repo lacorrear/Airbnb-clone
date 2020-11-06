@@ -1,0 +1,72 @@
+// Variables
+$airbnb-color: #ff385c;
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+  /* Stick the header on the top (because top:0) in the web site*/
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+
+  &__logo {
+    // background-color: rebeccapurple;
+    object-fit: contain;
+    height: 65px;
+    margin-left: 20px;
+  }
+
+  &__center {
+    // background-color: royalblue;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: fit-content;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    transition: box-shadow 200ms ease-in-out;
+
+    &:hover {
+      box-shadow: -1px 2px 5px rgba(33, 33, 33, 0.2);
+    }
+    input {
+      border: none;
+      padding: 10px;
+      outline-width: 0;
+      // width: 250px;
+    }
+  }
+
+  &__right {
+    // background-color: sandybrown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 60px;
+    width: 13vw;
+    p {
+      // background-color: red;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    igx-avatar {
+      cursor: pointer;
+    }
+  }
+}
+
+// avatar.component.scss
+// SEE https://www.infragistics.com/products/ignite-ui-angular/angular/components/avatar.html
+.igx-avatar {
+  background: $airbnb-color;
+  color: white;
+}

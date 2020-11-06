@@ -1,0 +1,50 @@
+<div class="picker">
+  <!-- date-Calendar.component.html -->
+  <igx-calendar
+    #calendar
+    selection="range"
+    [monthsViewNumber]="2"
+    [hideOutsideDays]="'true'"
+    (onSelection)="selectDates($event)"
+  >
+  </igx-calendar>
+
+  <igx-dialog
+    #alert
+    title="Availability"
+    leftButtonLabel="OK"
+    (onLeftButtonSelect)="alert.close()"
+  >
+  </igx-dialog>
+
+  <div class="picker__footer">
+    <div class="picker__footer__nog">
+      <div class="picker__footer__nog__text">
+        <p>Guests</p>
+        <span>Number of Guests</span>
+      </div>
+
+      <div class="picker__footer__nog__number">
+        <button
+          (click)="numberOG = numberOG - 1"
+          mat-mini-fab
+          [disabled]="numberOG < 1"
+        >
+          <span class="material-icons"> remove </span>
+        </button>
+        <span id="numberOG">{{ numberOG }}</span>
+        <button (click)="numberOG = numberOG + 1" mat-mini-fab>
+          <span class="material-icons"> add </span>
+        </button>
+      </div>
+    </div>
+    <button
+      (click)="submitDates($event)"
+      style="background-color: black"
+      mat-raised-button
+      color="accent"
+    >
+      Check Availability
+    </button>
+  </div>
+</div>

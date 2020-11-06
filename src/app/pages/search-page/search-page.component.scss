@@ -1,0 +1,30 @@
+.search {
+  &__info {
+    // background-color: hotpink;
+    padding: 20px;
+    padding-top: 2px;
+    p {
+      //   background-color: magenta;
+      font-size: 14px;
+    }
+
+    h4 {
+      //   background-color: maroon;
+      margin-top: 4px;
+      margin-bottom: 30px;
+      font-weight: 550;
+    }
+
+    button {
+      border: solid 1px lightgray;
+      border-radius: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  &__results {
+    // background-color: green;
+    display: flex;
+    flex-direction: column;
+  }
+}
